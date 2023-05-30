@@ -1,7 +1,11 @@
 import axios from "axios";
 
+ //Apikey y Url del sitio el cual se va consumir los servicios
  const apiUrl = 'https://api.themoviedb.org/3';
  const apikey = 'api_key=46d9f44bb41a5340ed72c97c55581681';
+
+ // Con estos metodos GET se podran consumir cada una de las categorias
+ // de la api themoviedb.
 
  //Obtener Categoria Peliculas Populares/GET
   export const getPeliPopulars = async () =>{
@@ -43,7 +47,7 @@ export const getPeli = async id =>{
 
 //Buscador de contenido por medio de caracter (letra o palabra)
 
-export const getBusPeliTv = async (query, type) =>{
+export const BusPeliTv = async (query, type) =>{
     const respuesta = await axios.get(`${apiUrl}/search/${type}?${apikey}&query=${query}`);
     return respuesta.data.results;
   };
